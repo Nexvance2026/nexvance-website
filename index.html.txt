@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexVance | Premium Tech Influencer Marketing Agency</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3b82f6;
+            letter-spacing: 1px;
+        }
+        .hero {
+            max-width: 1000px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            border: 2px solid #4b5563;
+            color: #f3f4f6;
+        }
+        .btn-secondary:hover {
+            border-color: #9ca3af;
+            background-color: rgba(255,255,255,0.05);
+            transform: translateY(-2px);
+        }
+        .sections-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .grid {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .card {
+            flex: 1;
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            padding: 40px;
+            transition: border-color 0.3s ease;
+        }
+        .card:hover {
+            border-color: #3b82f6;
+        }
+        .card h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .card h2 span {
+            color: #3b82f6;
+        }
+        .card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .card ul li {
+            margin-bottom: 12px;
+            color: #9ca3af;
+            position: relative;
+            padding-left: 24px;
+        }
+        .card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #1f2937;
+            color: #4b5563;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .grid { flex-direction: column; }
+            .hero h1 { font-size: 32px; }
+            .cta-buttons { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NexVance</div>
+    </header>
+
+    <section class="hero">
+        <h1>Bridging the Gap Between<br>Tech Brands & Premium Creators</h1>
+        <p>We manage high-converting YouTube integrations, handling the entire campaign pipeline from legal contracts to content delivery.</p>
+        <div class="cta-buttons">
+            <a href="mailto:haseeb@nexvance.com" class="btn btn-primary">I am a Tech Brand</a>
+            <a href="mailto:haseeb@nexvance.com" class="btn btn-secondary">I am a Creator</a>
+        </div>
+    </section>
+
+    <div class="sections-container">
+        <div class="grid">
+            <div class="card">
+                <h2>For <span>Tech Brands</span></h2>
+                <p style="color:#9ca3af; margin-bottom: 20px;">Scale your customer acquisition with high-aesthetic, structural workflows that drive actual product downloads and sales.</p>
+                <ul>
+                    <li>Curated roster of US/UK tech lifestyle creators</li>
+                    <li>Strict compliance and absolute script alignment</li>
+                    <li>Guaranteed delivery timeline for Q3 campaigns</li>
+                    <li>Zero communication delays — single point of contact</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>For <span>Creators</span></h2>
+                <p style="color:#9ca3af; margin-bottom: 20px;">Stop wasting time negotiating with brands. Focus entirely on content while we maximize your revenue.</p>
+                <ul>
+                    <li>100% Inbound business & sponsor negotiations handled</li>
+                    <li>Strict legal contract management for your safety</li>
+                    <li>Zero upfront costs — 20% cut only when you get paid</li>
+                    <li>Direct redirection for any future brand campaigns</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 NexVance. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
