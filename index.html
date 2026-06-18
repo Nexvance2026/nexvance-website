@@ -3,106 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexVance | Premium Influencer Marketing Agency</title>
+    <title>NexVance | Next-Gen Tech Influencer Infrastructure</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #131a26;
-            --text-main: #ffffff;
-            --text-muted: #9ca3af;
+            --bg-dark: #070a13;
+            --bg-card: #0f1524;
+            --bg-card-hover: #151d30;
             --accent-brand: #3b82f6;
+            --accent-brand-glow: rgba(59, 130, 246, 0.25);
             --accent-creator: #10b981;
-            --border-glow: rgba(59, 130, 246, 0.2);
+            --accent-creator-glow: rgba(16, 185, 129, 0.25);
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --border-color: rgba(255, 255, 255, 0.05);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* Header & Logo Placeholder */
-        header {
-            max-width: 1200px;
+        /* Premium Blurred Background Elements */
+        .glow-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            top: -100px;
+            left: -200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Premium Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(7, 10, 19, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .nav-container {
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 30px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 30px;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* Premium Textual Logo Setup until image logo is uploaded */
         .logo-text {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(to right, #ffffff, #3b82f6);
+            background: linear-gradient(to right, #ffffff, var(--accent-brand));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            cursor: pointer;
         }
 
-        /* Main Container for Deep Scrolling */
-        main {
-            max-width: 1200px;
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-btn.active-brand {
+            border-bottom: 2px solid var(--accent-brand);
+            color: var(--text-primary);
+        }
+
+        .nav-btn.active-creator {
+            border-bottom: 2px solid var(--accent-creator);
+            color: var(--text-primary);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 20px 100px 20px;
+            padding: 0 30px;
         }
 
-        /* Hero Section */
-        .hero {
+        /* Section View Engine */
+        .view-section {
+            display: none;
+            animation: sectionFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes sectionFade {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Blocks */
+        .hero-block {
             text-align: center;
-            padding: 80px 0 60px 0;
-            max-width: 900px;
+            padding: 120px 0 80px 0;
+            max-width: 950px;
             margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 52px;
+        .hero-block h1 {
+            font-size: 56px;
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 25px;
-            background: linear-gradient(to right, #ffffff, #a5b4fc, #60a5fa);
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 70%, var(--accent-brand) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero p {
-            font-size: 20px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-block.creator h1 {
+            background: linear-gradient(135deg, #ffffff 30%, #a7f3d0 70%, var(--accent-creator) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Interaction Buttons */
-        .cta-group {
+        .hero-block p {
+            font-size: 21px;
+            color: var(--text-secondary);
+            margin-bottom: 45px;
+            font-weight: 400;
+        }
+
+        /* Action Triggers */
+        .action-flex {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
+            gap: 24px;
+            margin-bottom: 60px;
         }
 
-        .btn {
-            padding: 16px 35px;
+        .action-btn {
+            padding: 18px 38px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -111,167 +182,294 @@
             align-items: center;
         }
 
-        .btn-brand {
-            background-color: var(--accent-brand);
+        .btn-blue {
+            background: var(--accent-brand);
             color: white;
             border: none;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 4px 25px var(--accent-brand-glow);
         }
 
-        .btn-brand:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+        .btn-blue:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(59, 130, 246, 0.5);
         }
 
-        .btn-creator {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 2px solid var(--accent-creator);
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+        .btn-green {
+            background: var(--accent-creator);
+            color: #070a13;
+            border: none;
+            box-shadow: 0 4px 25px var(--accent-creator-glow);
         }
 
-        .btn-creator:hover {
-            background-color: var(--accent-creator);
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(16, 185, 129, 0.4);
+        .btn-green:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(16, 185, 129, 0.5);
         }
 
-        /* Trust & Process Section (Knowledge Base) */
-        .process-section {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 50px;
-            font-weight: 700;
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .process-card {
-            background-color: var(--card-bg);
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .process-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .process-number {
-            font-size: 48px;
-            font-weight: 800;
-            color: rgba(59, 130, 246, 0.15);
-            position: absolute;
-            top: 15px;
-            right: 25px;
-        }
-
-        .process-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #f3f4f6;
-        }
-
-        .process-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        /* Dedicated Portal Sections (Hidden by Default) */
-        .portal-section {
-            display: none;
-            padding: 60px 40px;
+        /* Image Showcase Containers */
+        .visual-container {
+            width: 100%;
+            height: 480px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
-            margin-top: 40px;
-            animation: fadeIn 0.5s ease forwards;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .visual-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(7, 10, 19, 0.9) 100%);
         }
 
-        #brand-portal {
-            background: linear-gradient(135deg, #131a26 0%, #0d1527 100%);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1);
-        }
-
-        #creator-portal {
-            background: linear-gradient(135deg, #111d20 0%, #091416 100%);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);
-        }
-
-        .portal-header {
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-
-        .portal-header h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        .portal-header p {
+        .visual-placeholder-text {
             color: var(--text-muted);
-            font-size: 16px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            z-index: 2;
         }
 
-        .portal-grid {
+        /* Analytical Metrics Showcase */
+        .metrics-ribbon {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background: rgba(15, 21, 36, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            border-radius: 16px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .metrics-ribbon { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        .metric-item h2 {
+            font-size: 44px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .metric-item p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Detailed Structured Knowledge Row Blocks */
+        .knowledge-block {
+            padding: 100px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .block-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px auto;
+        }
+
+        .block-heading h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .block-heading p {
+            color: var(--text-secondary);
+            font-size: 17px;
+        }
+
+        .split-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
         }
 
         @media (max-width: 850px) {
-            .portal-grid { grid-template-columns: 1fr; gap: 30px; }
+            .split-row { grid-template-columns: 1fr; gap: 40px; }
+            .split-row .reverse-on-mobile { order: -1; }
         }
 
-        .benefits-list {
+        .split-text h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .split-text p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .feature-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Full Lifecycle Strategy Grid */
+        .lifecycle-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 950px) {
+            .lifecycle-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 550px) {
+            .lifecycle-grid { grid-template-columns: 1fr; }
+        }
+
+        .lifecycle-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .lifecycle-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-5px);
+        }
+
+        .card-step {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-brand);
+            margin-bottom: 15px;
+        }
+
+        .creator .card-step { color: var(--accent-creator); }
+
+        .lifecycle-card h4 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .lifecycle-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Large Pipeline Intake Section */
+        .intake-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 21, 36, 0.4) 100%);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .intake-box {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 950px) {
+            .intake-box { grid-template-columns: 1fr; padding: 40px; }
+        }
+
+        .intake-details h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .intake-details p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        .trust-checklist {
             list-style: none;
         }
 
-        .benefits-list li {
-            margin-bottom: 20px;
+        .trust-checklist li {
             position: relative;
-            padding-left: 30px;
+            padding-left: 32px;
+            margin-bottom: 20px;
             font-size: 16px;
+            color: var(--text-primary);
         }
 
-        .benefits-list li::before {
-            content: "✓";
+        .trust-checklist li::before {
+            content: "✦";
             position: absolute;
             left: 0;
-            top: 0;
+            color: var(--accent-brand);
             font-weight: bold;
         }
 
-        #brand-portal .benefits-list li::before { color: var(--accent-brand); }
-        #creator-portal .benefits-list li::before { color: var(--accent-creator); }
+        .creator .trust-checklist li::before { color: var(--accent-creator); }
 
-        /* Advanced Premium Forms */
+        /* Premium Forms Engine */
         form {
             display: flex;
             flex-direction: column;
+            gap: 24px;
+            background: rgba(7, 10, 19, 0.5);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            border-radius: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
         }
 
         .form-group {
@@ -280,199 +478,433 @@
             gap: 8px;
         }
 
-        label {
+        form label {
             font-size: 14px;
             font-weight: 600;
             color: #d1d5db;
         }
 
-        input, textarea, select {
-            padding: 14px;
-            background: #1f2937;
+        form input, form textarea, form select {
+            padding: 16px;
+            background: #111827;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 6px;
+            border-radius: 8px;
             color: white;
             font-size: 15px;
             transition: all 0.3s ease;
         }
 
-        input:focus, textarea:focus, select:focus {
+        form input:focus, form textarea:focus, form select:focus {
             outline: none;
             border-color: var(--accent-brand);
-            background: #253142;
+            background: #162238;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
         }
 
-        #creator-portal input:focus, #creator-portal textarea:focus, #creator-portal select:focus {
+        .creator form input:focus, .creator form textarea:focus, .creator form select:focus {
             border-color: var(--accent-creator);
-            background: #192b24;
+            background: #0f241d;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
         }
 
-        submit-btn {
-            padding: 16px;
+        .btn-submit {
+            padding: 18px;
             font-weight: 700;
             font-size: 16px;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             border: none;
             color: white;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            margin-top: 10px;
         }
 
-        #brand-portal .submit-btn { background: var(--accent-brand); }
-        #creator-portal .submit-btn { background: var(--accent-creator); color: #000; }
+        .brand-submit { background: var(--accent-brand); box-shadow: 0 4px 20px var(--accent-brand-glow); }
+        .brand-submit:hover { transform: translateY(-2px); background: #2563eb; }
 
-        /* Footer */
+        .creator-submit { background: var(--accent-creator); color: #070a13; box-shadow: 0 4px 20px var(--accent-creator-glow); }
+        .creator-submit:hover { transform: translateY(-2px); background: #059669; }
+
+        /* Footer Infrastructure */
         footer {
+            border-top: 1px solid var(--border-color);
+            padding: 80px 0 40px 0;
+            background: #04060c;
+            color: var(--text-secondary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        .footer-info h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding: 60px 20px;
-            margin-top: 100px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
             font-size: 14px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            padding-top: 30px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <!-- text logo infrastructure -->
-            <div class="logo-text">NexVance</div>
+    <div class="glow-bg"></div>
+
+    <!-- Navigation Hub -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-text" onclick="showSection('home')">NexVance</div>
+            <div class="nav-links">
+                <button id="btn-nav-home" class="nav-btn active" onclick="showSection('home')">Overview</button>
+                <button id="btn-nav-brand" class="nav-btn" onclick="showSection('brand')">For Tech Brands</button>
+                <button id="btn-nav-creator" class="nav-btn" onclick="showSection('creator')">For Creators</button>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>We Bridge the Gap Between Dynamic Tech Brands & High-Aesthetic Creators</h1>
-            <p>We streamline elite YouTube integrations. No communication gaps, no messy tracking—just high-converting workflows that translate directly into ROI and scaled audiences.</p>
-            
-            <div class="cta-group">
-                <button class="btn btn-brand" onclick="openPortal('brand')">I am a Tech Brand</button>
-                <button class="btn btn-creator" onclick="openPortal('creator')">I am a Creator</button>
-            </div>
-        </section>
+    <!-- ============================================= -->
+    <!-- MAIN INTERACTIVE VIEWPORTS                   -->
+    <!-- ============================================= -->
+    <main class="container">
 
-        <!-- Knowledge & Framework Section (Trust Builder) -->
-        <section class="process-section">
-            <h2 class="section-title">How NexVance Drives Guaranteed Success</h2>
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-number">01</div>
-                    <h3>Precision Vetting</h3>
-                    <p>We don't match brands blindly. We analyze behavioral metrics, creator audience psychology, and past performance analytics to ensure an organic audience alignment.</p>
+        <!-- 1. MAIN GLOBAL OVERVIEW PAGE -->
+        <div id="view-home" class="view-section active">
+            <section class="hero-block">
+                <h1>We Architecture the Integration Layer for Global Tech Operations</h1>
+                <p>NexVance builds high-performance bridges connecting software, hardware, and deep-tech brands with highly technical, high-aesthetic digital creators. Zero communication friction. Pure quantitative results.</p>
+                <div class="action-flex">
+                    <button class="action-btn btn-blue" onclick="showSection('brand')">Access Brand Pipeline</button>
+                    <button class="action-btn btn-outline" onclick="showSection('creator')">Join Roster Network</button>
                 </div>
-                <div class="process-card">
-                    <div class="process-number">02</div>
-                    <h3>Frictionless Contracts</h3>
-                    <p>We handle the heavy lifting. From comprehensive legal frameworks and strict compliance management to timely script alignment, we eliminate execution risks completely.</p>
-                </div>
-                <div class="process-card">
-                    <div class="process-number">03</div>
-                    <h3>Data-Driven Optimization</h3>
-                    <p>Every single integration is structured around advanced neuromarketing principles. We maximize hook retention and engineer CTR to convert viewers into paying customers.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Dedicated Tech Brand Portal -->
-        <section id="brand-portal" class="portal-section">
-            <div class="portal-header">
-                <h2>Scale Your Product Adoption</h2>
-                <p>Acquire high-intent customers through structured workflows, secure timelines, and high-conversion integrations built specifically for software, hardware, and SaaS companies.</p>
+            <!-- Embedded Technical Showcase Container -->
+            <div class="visual-container">
+                <div class="visual-placeholder-text">[ Interactive Integration Mapping Visual Panel - Placement Area ]</div>
             </div>
-            <div class="portal-grid">
-                <div>
-                    <ul class="benefits-list">
-                        <li><strong>Curated Network:</strong> Instant access to top-tier verified tech lifestyle and software creators.</li>
-                        <li><strong>Zero Compliance Overhead:</strong> Strict script alignment and thorough quality checks before any video goes live.</li>
-                        <li><strong>Guaranteed Delivery Timelines:</strong> Complete production management ensuring no communication delays.</li>
-                        <li><strong>Single Point of Contact:</strong> Dedicated manager handling your whole campaign pipeline seamlessly.</li>
-                    </ul>
-                </div>
-                <div>
-                    <!-- Secure Action Form routed to your central dashboard email -->
-                    <form action="https://formspree.io/f/xlgkywng" method="POST">
-                        <input type="hidden" name="_subject" value="New Tech Brand Inquiry - NexVance">
-                        <input type="hidden" name="to" value="agencynexvance@gmail.com">
-                        
-                        <div class="form-group">
-                            <label>Company Name</label>
-                            <input type="text" name="company_name" required placeholder="e.g. Acme Software">
-                        </div>
-                        <div class="form-group">
-                            <label>Work Email</label>
-                            <input type="email" name="email" required placeholder="name@company.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Target Audience / Goal</label>
-                            <textarea name="goals" rows="3" required placeholder="What are you trying to drive? Downloads, signups, brand awareness..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Request Campaign Strategy</button>
-                    </form>
-                </div>
-            </div>
-        </section>
 
-        <!-- Dedicated Creator Portal -->
-        <section id="creator-portal" class="portal-section">
-            <div class="portal-header">
-                <h2>Protect Your Craft. Maximize Revenue.</h2>
-                <p>Stop wasting endless hours negotiating complex terms with corporate brands. Focus entirely on your content while we land and manage your inbound corporate pipeline.</p>
-            </div>
-            <div class="portal-grid">
-                <div>
-                    <ul class="benefits-list">
-                        <li><strong>Premium Sponsorship Deals:</strong> We connect you directly with global tech brands looking for authentic integrations.</li>
-                        <li><strong>Strict Contract Safety:</strong> Full protection against delayed payments or shifting campaign requirements.</li>
-                        <li><strong>Neuromarketing Support:</strong> Custom analytics audit to help optimize retention hooks and visual strategies.</li>
-                        <li><strong>100% Free Until You Get Paid:</strong> Transparent 20% commission model strictly on closed brand contracts.</li>
-                    </ul>
+            <!-- Quantitative Data Ribbon -->
+            <section class="metrics-ribbon">
+                <div class="metric-item">
+                    <h2>84%</h2>
+                    <p>Average Hook Retention Rate</p>
                 </div>
-                <div>
-                    <form action="https://formspree.io/f/xlgkywng" method="POST">
-                        <input type="hidden" name="_subject" value="New Creator Application - NexVance">
-                        <input type="hidden" name="to" value="agencynexvance@gmail.com">
-                        
-                        <div class="form-group">
-                            <label>Channel Name</label>
-                            <input type="text" name="channel_name" required placeholder="e.g. TechVlog">
-                        </div>
-                        <div class="form-group">
-                            <label>YouTube Link</label>
-                            <input type="url" name="channel_url" required placeholder="youtube.com/@yourchannel">
-                        </div>
-                        <div class="form-group">
-                            <label>Contact Email</label>
-                            <input type="email" name="email" required placeholder="yourname@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Average Views Per Video</label>
-                            <input type="text" name="avg_views" required placeholder="e.g. 20k - 50k">
-                        </div>
-                        <button type="submit" class="submit-btn">Apply for Roster Onboarding</button>
-                    </form>
+                <div class="metric-item">
+                    <h2>$2.4M+</h2>
+                    <p>Contract Value Managed</p>
                 </div>
+                <div class="metric-item">
+                    <h2>0%</h2>
+                    <p>Integration Protocol Overhead</p>
+                </div>
+            </section>
+
+            <!-- Human Behavior / Neuromarketing Base Section -->
+            <section class="knowledge-block">
+                <div class="block-heading">
+                    <h2>Engineered for Deep Psychological Retention</h2>
+                    <p>We do not manage standard "influencer shoutouts". We architect deep integrations using advanced neuromarketing blueprints to translate views directly into product utilization metrics.</p>
+                </div>
+
+                <div class="split-row">
+                    <div class="split-text">
+                        <h3>Advanced Cognitive Hook Optimization</h3>
+                        <p>Our thumbnail strategies and narrative pacing frameworks are engineered strictly around rapid cognitive processing models. We manage how the brain processes data blocks in the initial 3 seconds of contact.</p>
+                        <div class="feature-tag-list">
+                            <span class="feature-tag">CTR Optimization</span>
+                            <span class="feature-tag">Behavioral Retention</span>
+                            <span class="feature-tag">Attention Mapping</span>
+                        </div>
+                    </div>
+                    <div class="visual-container" style="height: 320px; margin: 0;">
+                        <div class="visual-placeholder-text">[ Retention Analytics Display Container ]</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- 2. DEDICATED TECH BRAND WORKPLACE PORTAL -->
+        <div id="view-brand" class="view-section brand">
+            <section class="hero-block">
+                <h1>Scale Product Adoption via Deterministic Workflows</h1>
+                <p>Acquire high-intent technical users through structured, secure, and data-backed video integrations. We manage the absolute entirety of your developer lifestyle and software marketing campaigns.</p>
+                <div class="action-flex">
+                    <button class="action-btn btn-blue" onclick="scrollToForm('brand-intake-form')">Initiate Campaign Blueprint</button>
+                </div>
+            </section>
+
+            <div class="visual-container">
+                <div class="visual-placeholder-text">[ Brand Campaign Dashboard & Metrics Visual Platform ]</div>
             </div>
-        </section>
+
+            <!-- Deep Knowledge Lifecycle Section -->
+            <section class="knowledge-block">
+                <div class="block-heading">
+                    <h2>The Brand Integration Architecture</h2>
+                    <p>How NexVance guarantees zero friction and high conversion volumes across your entire software or developer campaign lifecycles.</p>
+                </div>
+
+                <div class="lifecycle-grid">
+                    <div class="lifecycle-card">
+                        <div class="card-step">Phase 01</div>
+                        <h4>Precision Matching</h4>
+                        <p>We audit creator analytics and demographic psychology to ensure your product fits natively into their lifestyle.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="card-step">Phase 02</div>
+                        <h4>Script Engineering</h4>
+                        <p>Our team builds comprehensive integration briefs emphasizing core feature value loops and native conversion anchors.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="card-step">Phase 03</div>
+                        <h4>Compliance Check</h4>
+                        <p>Every piece of technical asset content is meticulously vetted internally for absolute messaging safety before deployment.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="card-step">Phase 04</div>
+                        <h4>Attribution Mapping</h4>
+                        <p>Continuous conversion data collection and scaling frameworks optimized to maximize long-tail customer acquisition value.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Direct Brand Intake Module -->
+            <section id="brand-intake-form" class="intake-section">
+                <div class="intake-box">
+                    <div class="intake-details">
+                        <h3>Deploy Your Strategy</h3>
+                        <p>Connect with an elite single point of contact to launch your next developer or tech lifestyle growth infrastructure campaign.</p>
+                        <ul class="trust-checklist">
+                            <li>Verified Audience Retention Metrics</li>
+                            <li>End-to-End Campaign Protection Policies</li>
+                            <li>Direct Access to Premium Developer Roster</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <form action="https://formspree.io/f/xlgkywng" method="POST">
+                            <input type="hidden" name="_subject" value="URGENT: New Tech Brand Campaign Pipeline Lead">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Company/SaaS Name</label>
+                                    <input type="text" name="brand_name" required placeholder="e.g. Vancetech Corp">
+                                </div>
+                                <div class="form-group">
+                                    <label>Work Email</label>
+                                    <input type="email" name="email" required placeholder="founder@company.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Target Target Metrics / Product Type</label>
+                                <select name="product_vertical" required>
+                                    <option value="" disabled selected>Select Vertical</option>
+                                    <option value="saas">SaaS / Cloud Software</option>
+                                    <option value="hardware">Hardware / Infrastructure</option>
+                                    <option value="ai">AI / Productivity Platform</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Campaign Objectives & Specific Directives</label>
+                                <textarea name="campaign_notes" rows="4" required placeholder="Detail your specific scale, target timelines, and core user goals..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit brand-submit">Request Integration Pipeline</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- 3. DEDICATED HIGH-AESTHETIC CREATOR ENGINE PORTAL -->
+        <div id="view-creator" class="view-section creator">
+            <section class="hero-block creator">
+                <h1>Protect Your Craft. Maximize Absolute Contract Enterprise Value.</h1>
+                <p>Stop wasting endless engineering hours acting as a manager. Offload corporate friction completely. Focus exclusively on your video infrastructure while we build your inbound sponsorship stack.</p>
+                <div class="action-flex">
+                    <button class="action-btn btn-green" onclick="scrollToForm('creator-intake-form')">Apply for Roster Integration</button>
+                </div>
+            </section>
+
+            <div class="visual-container">
+                <div class="visual-placeholder-text">[ Creator Growth Analytics & Integration Dashboard Panel ]</div>
+            </div>
+
+            <!-- Deep Knowledge Lifecycle Section for Creators -->
+            <section class="knowledge-block">
+                <div class="block-heading">
+                    <h2>Our Operational Promise to Creators</h2>
+                    <p>We optimize your operations so you can build. No corporate lowball offers, no complex script delays, no missed payments.</p>
+                </div>
+
+                <div class="lifecycle-grid">
+                    <div class="lifecycle-card">
+                        <div class="card-step">Stage 01</div>
+                        <h4>Enterprise Deal Flow</h4>
+                        <p>We pitch your exact channel demographics to global software and tech brands matching your unique channel aesthetic.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="card-step">Stage 02</div>
+                        <h4>Contract Shield</h4>
+                        <p>Absolute enforcement of creative freedom guidelines and verified timely payment processing for every integration.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="card-step">Stage 03</div>
+                        <h4>Psychological Audit</h4>
+                        <p>Our core in-house thumbnail strategists help engineer hooks and retention profiles to scale your view baselines.</p>
+                    </div>
+                    <div class="lifecycle-card">
+                        <div class="card-step">Stage 04</div>
+                        <h4>Performance Scale</h4>
+                        <p>Transitioning singular multi-video testing runs into high-value, predictable, recurring programmatic quarterly retaining contracts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Direct Creator Onboarding Module -->
+            <section id="creator-intake-form" class="intake-section">
+                <div class="intake-box" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <div class="intake-details">
+                        <h3>Secure Your Monetization Layer</h3>
+                        <p>Apply to onboard onto our high-tier dedicated roster network. We work strictly on commission—we only win when your channel secures elite deals.</p>
+                        <ul class="trust-checklist">
+                            <li>100% Contract & Pricing Transparency</li>
+                            <li>Direct Inbound Management of All Tech Leases</li>
+                            <li>Advanced Visual Hook Optimizations</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <form action="https://formspree.io/f/xlgkywng" method="POST">
+                            <input type="hidden" name="_subject" value="APPLICATION: New Creator Roster Submission">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Channel Identity</label>
+                                    <input type="text" name="channel_name" required placeholder="e.g. CodeVibe">
+                                </div>
+                                <div class="form-group">
+                                    <label>Secure Communication Email</label>
+                                    <input type="email" name="email" required placeholder="creator@gmail.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Primary YouTube Platform URL</label>
+                                <input type="url" name="channel_url" required placeholder="youtube.com/@yourchannel">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Average Baseline Views</label>
+                                    <input type="text" name="metrics_views" required placeholder="e.g. 40,000">
+                                </div>
+                                <div class="form-group">
+                                    <label>Core Tech Core Focus</label>
+                                    <input type="text" name="niche_focus" required placeholder="e.g. AI / Minimal Desks / Software">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-submit creator-submit">Submit Onboarding File</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
 
+    <!-- Global Enterprise Footer -->
     <footer>
-        <p>&copy; 2026 NexVance. All rights reserved.</p>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>NexVance</h3>
+                <p>We engine the baseline metrics, behavioral optimization tools, and strategic pipelines that secure modern user scale for global tech institutions.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Ecosystem</h4>
+                <ul>
+                    <li><a onclick="showSection('brand')">Tech Brand Portal</a></li>
+                    <li><a onclick="showSection('creator')">Creator Roster Portal</a></li>
+                    <li><a onclick="showSection('home')">Neuromarketing Foundations</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Corporate Network</h4>
+                <ul>
+                    <li><a onclick="showSection('home')">Privacy Framework</a></li>
+                    <li><a onclick="showSection('home')">Operations Protocol</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NexVance. Built for Global Scale Infrastructure. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- View & Routing Interaction Controller Script -->
     <script>
-        function openPortal(type) {
-            // Hide all portals first
-            document.getElementById('brand-portal').style.display = 'none';
-            document.getElementById('creator-portal').style.display = 'none';
+        function showSection(sectionId) {
+            // Remove active classes from all dynamic viewport elements
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+            });
             
-            // Show the targeted premium portal section
-            const activePortal = document.getElementById(type + '-portal');
-            activePortal.style.display = 'block';
-            
-            // Smooth scroll execution to display full layout details
-            activePortal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Remove navigation style indicator accents
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = 'nav-btn';
+            });
+
+            // Target layout activation
+            const selectedSection = document.getElementById('view-' + sectionId);
+            selectedSection.classList.add('active');
+
+            // Apply unique active highlighting profiles
+            const activeNavBtn = document.getElementById('btn-nav-' + sectionId);
+            if(sectionId === 'home') activeNavBtn.classList.add('active');
+            if(sectionId === 'brand') activeNavBtn.classList.add('active-brand');
+            if(sectionId === 'creator') activeNavBtn.classList.add('active-creator');
+
+            // Scroll directly to the top anchor points
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToForm(formContainerId) {
+            document.getElementById(formContainerId).scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     </script>
 </body>
