@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexVance | Next-Gen Tech Influencer Infrastructure</title>
+    <title>NexVance | Premium Tech Influencer Marketing Agency</title>
     <style>
         :root {
             --bg-dark: #070a13;
@@ -34,7 +34,6 @@
             line-height: 1.7;
         }
 
-        /* Premium Blurred Background Elements */
         .glow-bg {
             position: absolute;
             width: 600px;
@@ -46,7 +45,6 @@
             pointer-events: none;
         }
 
-        /* Premium Sticky Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -108,14 +106,12 @@
             color: var(--text-primary);
         }
 
-        /* Layout Container */
         .container {
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 30px;
         }
 
-        /* Section View Engine */
         .view-section {
             display: none;
             animation: sectionFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -130,7 +126,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Blocks */
         .hero-block {
             text-align: center;
             padding: 120px 0 80px 0;
@@ -139,9 +134,9 @@
         }
 
         .hero-block h1 {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.2;
             letter-spacing: -1px;
             margin-bottom: 30px;
             background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 70%, var(--accent-brand) 100%);
@@ -156,13 +151,12 @@
         }
 
         .hero-block p {
-            font-size: 21px;
+            font-size: 20px;
             color: var(--text-secondary);
             margin-bottom: 45px;
             font-weight: 400;
         }
 
-        /* Action Triggers */
         .action-flex {
             display: flex;
             justify-content: center;
@@ -217,10 +211,9 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
 
-        /* Image Showcase Containers */
         .visual-container {
             width: 100%;
-            height: 480px;
+            height: 440px;
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
@@ -242,14 +235,14 @@
 
         .visual-placeholder-text {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-align: center;
             z-index: 2;
+            padding: 20px;
         }
 
-        /* Analytical Metrics Showcase */
         .metrics-ribbon {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -275,12 +268,10 @@
 
         .metric-item p {
             color: var(--text-secondary);
-            font-size: 15px;
-            text-transform: uppercase;
+            font-size: 14px;
             letter-spacing: 1px;
         }
 
-        /* Detailed Structured Knowledge Row Blocks */
         .knowledge-block {
             padding: 100px 0;
             border-top: 1px solid var(--border-color);
@@ -293,7 +284,7 @@
         }
 
         .block-heading h2 {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 700;
             margin-bottom: 20px;
         }
@@ -313,11 +304,10 @@
 
         @media (max-width: 850px) {
             .split-row { grid-template-columns: 1fr; gap: 40px; }
-            .split-row .reverse-on-mobile { order: -1; }
         }
 
         .split-text h3 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             margin-bottom: 20px;
         }
@@ -339,11 +329,10 @@
             border: 1px solid var(--border-color);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-secondary);
         }
 
-        /* Full Lifecycle Strategy Grid */
         .lifecycle-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -373,7 +362,7 @@
         }
 
         .card-step {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -384,7 +373,7 @@
         .creator .card-step { color: var(--accent-creator); }
 
         .lifecycle-card h4 {
-            font-size: 19px;
+            font-size: 18px;
             margin-bottom: 12px;
         }
 
@@ -394,7 +383,6 @@
             line-height: 1.6;
         }
 
-        /* Large Pipeline Intake Section */
         .intake-section {
             padding: 100px 0;
             background: linear-gradient(180deg, transparent 0%, rgba(15, 21, 36, 0.4) 100%);
@@ -418,14 +406,14 @@
         }
 
         .intake-details h3 {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
             margin-bottom: 25px;
         }
 
         .intake-details p {
             color: var(--text-secondary);
-            font-size: 17px;
+            font-size: 16px;
             margin-bottom: 40px;
         }
 
@@ -442,7 +430,7 @@
         }
 
         .trust-checklist li::before {
-            content: "✦";
+            content: "✓";
             position: absolute;
             left: 0;
             color: var(--accent-brand);
@@ -451,7 +439,6 @@
 
         .creator .trust-checklist li::before { color: var(--accent-creator); }
 
-        /* Premium Forms Engine */
         form {
             display: flex;
             flex-direction: column;
@@ -502,6 +489,7 @@
         }
 
         .creator form input:focus, .creator form textarea:focus, .creator form select:focus {
+            outline: none;
             border-color: var(--accent-creator);
             background: #0f241d;
             box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
@@ -525,7 +513,6 @@
         .creator-submit { background: var(--accent-creator); color: #070a13; box-shadow: 0 4px 20px var(--accent-creator-glow); }
         .creator-submit:hover { transform: translateY(-2px); background: #059669; }
 
-        /* Footer Infrastructure */
         footer {
             border-top: 1px solid var(--border-color);
             padding: 80px 0 40px 0;
@@ -552,7 +539,7 @@
 
         .footer-links h4 {
             color: white;
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -590,7 +577,7 @@
 
     <div class="glow-bg"></div>
 
-    <!-- Navigation Hub -->
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <div class="logo-text" onclick="showSection('home')">NexVance</div>
@@ -602,152 +589,152 @@
         </div>
     </nav>
 
-    <!-- ============================================= -->
-    <!-- MAIN INTERACTIVE VIEWPORTS                   -->
-    <!-- ============================================= -->
+    <!-- Main Container -->
     <main class="container">
 
-        <!-- 1. MAIN GLOBAL OVERVIEW PAGE -->
+        <!-- 1. MAIN HOME / OVERVIEW PAGE -->
         <div id="view-home" class="view-section active">
             <section class="hero-block">
-                <h1>We Architecture the Integration Layer for Global Tech Operations</h1>
-                <p>NexVance builds high-performance bridges connecting software, hardware, and deep-tech brands with highly technical, high-aesthetic digital creators. Zero communication friction. Pure quantitative results.</p>
+                <h1>We Connect Top Tech Brands With Premium Creators</h1>
+                <p>NexVance handles everything from scouting to smooth communication and contract management. We make sure tech companies and lifestyle creators work together seamlessly to get real marketing results.</p>
                 <div class="action-flex">
-                    <button class="action-btn btn-blue" onclick="showSection('brand')">Access Brand Pipeline</button>
-                    <button class="action-btn btn-outline" onclick="showSection('creator')">Join Roster Network</button>
+                    <button class="action-btn btn-blue" onclick="showSection('brand')">I am a Tech Brand</button>
+                    <button class="action-btn btn-outline" onclick="showSection('creator')">I am a Content Creator</button>
                 </div>
             </section>
 
-            <!-- Embedded Technical Showcase Container -->
+            <!-- IMAGE_PLACEHOLDER -->
             <div class="visual-container">
-                <div class="visual-placeholder-text">[ Interactive Integration Mapping Visual Panel - Placement Area ]</div>
+                <div class="visual-placeholder-text">[ Image: Interactive mapping showing how NexVance connects Brands and Creators ]</div>
             </div>
 
-            <!-- Quantitative Data Ribbon -->
+            <!-- Simple Metrics Ribbon -->
             <section class="metrics-ribbon">
                 <div class="metric-item">
                     <h2>84%</h2>
-                    <p>Average Hook Retention Rate</p>
+                    <p>Average Audience Retention</p>
                 </div>
                 <div class="metric-item">
-                    <h2>$2.4M+</h2>
-                    <p>Contract Value Managed</p>
+                    <h2>50+</h2>
+                    <p>Verified Elite Creators</p>
                 </div>
                 <div class="metric-item">
-                    <h2>0%</h2>
-                    <p>Integration Protocol Overhead</p>
+                    <h2>100%</h2>
+                    <p>Managed Campaign Workflow</p>
                 </div>
             </section>
 
-            <!-- Human Behavior / Neuromarketing Base Section -->
+            <!-- Human Behavior / Trust Section (Fixed image_91ce27.png Point) -->
             <section class="knowledge-block">
                 <div class="block-heading">
-                    <h2>Engineered for Deep Psychological Retention</h2>
-                    <p>We do not manage standard "influencer shoutouts". We architect deep integrations using advanced neuromarketing blueprints to translate views directly into product utilization metrics.</p>
+                    <h2>Built on Deep Audience Psychology</h2>
+                    <p>We don't do basic shoutouts. We plan high-converting video integrations based on how real viewers behave, turning passive audience attention into valuable product signups.</p>
                 </div>
 
                 <div class="split-row">
                     <div class="split-text">
-                        <h3>Advanced Cognitive Hook Optimization</h3>
-                        <p>Our thumbnail strategies and narrative pacing frameworks are engineered strictly around rapid cognitive processing models. We manage how the brain processes data blocks in the initial 3 seconds of contact.</p>
+                        <h3>Smart Engagement & Integration Planning</h3>
+                        <p>We carefully study how viewers watch video sponsorships. By optimizing the narrative flow, pacing, and calls-to-action within the content, we make sure the audience stays hooked during the brand message.</p>
                         <div class="feature-tag-list">
-                            <span class="feature-tag">CTR Optimization</span>
-                            <span class="feature-tag">Behavioral Retention</span>
-                            <span class="feature-tag">Attention Mapping</span>
+                            <span class="feature-tag">Audience Attention Mapping</span>
+                            <span class="feature-tag">High-Converting Pacing</span>
+                            <span class="feature-tag">Brand Message Alignment</span>
                         </div>
                     </div>
+                    <!-- IMAGE_PLACEHOLDER -->
                     <div class="visual-container" style="height: 320px; margin: 0;">
-                        <div class="visual-placeholder-text">[ Retention Analytics Display Container ]</div>
+                        <div class="visual-placeholder-text">[ Image: Audience Engagement & Retention Analytics Chart ]</div>
                     </div>
                 </div>
             </section>
         </div>
 
 
-        <!-- 2. DEDICATED TECH BRAND WORKPLACE PORTAL -->
+        <!-- 2. TECH BRAND PORTAL -->
         <div id="view-brand" class="view-section brand">
             <section class="hero-block">
-                <h1>Scale Product Adoption via Deterministic Workflows</h1>
-                <p>Acquire high-intent technical users through structured, secure, and data-backed video integrations. We manage the absolute entirety of your developer lifestyle and software marketing campaigns.</p>
+                <h1>Grow Your Product Base With Trusted Creators</h1>
+                <p>Get high-intent software users and software downloads through secure, structured video placements. We completely manage your creator marketing campaigns from start to finish.</p>
                 <div class="action-flex">
-                    <button class="action-btn btn-blue" onclick="scrollToForm('brand-intake-form')">Initiate Campaign Blueprint</button>
+                    <button class="action-btn btn-blue" onclick="scrollToForm('brand-intake-form')">Start Campaign Strategy</button>
                 </div>
             </section>
 
+            <!-- IMAGE_PLACEHOLDER -->
             <div class="visual-container">
-                <div class="visual-placeholder-text">[ Brand Campaign Dashboard & Metrics Visual Platform ]</div>
+                <div class="visual-placeholder-text">[ Image: Dashboard showcasing tech brand metrics, ROI tracker, and live campaigns ]</div>
             </div>
 
-            <!-- Deep Knowledge Lifecycle Section -->
+            <!-- Step by Step Knowledge Setup -->
             <section class="knowledge-block">
                 <div class="block-heading">
-                    <h2>The Brand Integration Architecture</h2>
-                    <p>How NexVance guarantees zero friction and high conversion volumes across your entire software or developer campaign lifecycles.</p>
+                    <h2>The Brand Campaign Process</h2>
+                    <p>How NexVance takes away the stress of managing influencer communication and manual link tracking.</p>
                 </div>
 
                 <div class="lifecycle-grid">
                     <div class="lifecycle-card">
-                        <div class="card-step">Phase 01</div>
-                        <h4>Precision Matching</h4>
-                        <p>We audit creator analytics and demographic psychology to ensure your product fits natively into their lifestyle.</p>
+                        <div class="card-step">Step 01</div>
+                        <h4>Perfect Matching</h4>
+                        <p>We analyze creator demographics to find the absolute best fit for your software or tech niche.</p>
                     </div>
                     <div class="lifecycle-card">
-                        <div class="card-step">Phase 02</div>
-                        <h4>Script Engineering</h4>
-                        <p>Our team builds comprehensive integration briefs emphasizing core feature value loops and native conversion anchors.</p>
+                        <div class="card-step">Step 02</div>
+                        <h4>Content Briefing</h4>
+                        <p>We build detailed guides for creators, highlighting your main product features and core download values.</p>
                     </div>
                     <div class="lifecycle-card">
-                        <div class="card-step">Phase 03</div>
-                        <h4>Compliance Check</h4>
-                        <p>Every piece of technical asset content is meticulously vetted internally for absolute messaging safety before deployment.</p>
+                        <div class="card-step">Step 03</div>
+                        <h4>Quality Control</h4>
+                        <p>Every sponsored integration is carefully reviewed by our team before going public to protect your brand message.</p>
                     </div>
                     <div class="lifecycle-card">
-                        <div class="card-step">Phase 04</div>
-                        <h4>Attribution Mapping</h4>
-                        <p>Continuous conversion data collection and scaling frameworks optimized to maximize long-tail customer acquisition value.</p>
+                        <div class="card-step">Step 04</div>
+                        <h4>Results Evaluation</h4>
+                        <p>We gather clean campaign data to optimize upcoming sponsorships and scale your user base efficiently.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Direct Brand Intake Module -->
+            <!-- Brand Contact Box -->
             <section id="brand-intake-form" class="intake-section">
                 <div class="intake-box">
                     <div class="intake-details">
-                        <h3>Deploy Your Strategy</h3>
-                        <p>Connect with an elite single point of contact to launch your next developer or tech lifestyle growth infrastructure campaign.</p>
+                        <h3>Work With NexVance</h3>
+                        <p>Partner with an exclusive marketing manager to launch your upcoming tech, SaaS, or hardware sponsorship campaigns.</p>
                         <ul class="trust-checklist">
-                            <li>Verified Audience Retention Metrics</li>
-                            <li>End-to-End Campaign Protection Policies</li>
-                            <li>Direct Access to Premium Developer Roster</li>
+                            <li>Access to Top Tech & Developer Creators</li>
+                            <li>Full Campaign Quality Check & Policy Safety</li>
+                            <li>Clear Communication & Fast Deliveries</li>
                         </ul>
                     </div>
                     <div>
                         <form action="https://formspree.io/f/xlgkywng" method="POST">
-                            <input type="hidden" name="_subject" value="URGENT: New Tech Brand Campaign Pipeline Lead">
+                            <input type="hidden" name="_subject" value="New Brand Inquiry - NexVance">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Company/SaaS Name</label>
-                                    <input type="text" name="brand_name" required placeholder="e.g. Vancetech Corp">
+                                    <input type="text" name="brand_name" required placeholder="e.g. Acme Tech Solutions">
                                 </div>
                                 <div class="form-group">
                                     <label>Work Email</label>
-                                    <input type="email" name="email" required placeholder="founder@company.com">
+                                    <input type="email" name="email" required placeholder="name@company.com">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Target Target Metrics / Product Type</label>
+                                <label>Product Type / Vertical</label>
                                 <select name="product_vertical" required>
-                                    <option value="" disabled selected>Select Vertical</option>
-                                    <option value="saas">SaaS / Cloud Software</option>
-                                    <option value="hardware">Hardware / Infrastructure</option>
-                                    <option value="ai">AI / Productivity Platform</option>
+                                    <option value="" disabled selected>Select Category</option>
+                                    <option value="saas">SaaS / Productivity App</option>
+                                    <option value="hardware">Hardware / Desk Tech</option>
+                                    <option value="ai">AI Tool / Development App</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Campaign Objectives & Specific Directives</label>
-                                <textarea name="campaign_notes" rows="4" required placeholder="Detail your specific scale, target timelines, and core user goals..."></textarea>
+                                <label>Campaign Goals & Details</label>
+                                <textarea name="campaign_notes" rows="4" required placeholder="Tell us about your product, your target audience, and your primary timeline requirements..."></textarea>
                             </div>
-                            <button type="submit" class="btn-submit brand-submit">Request Integration Pipeline</button>
+                            <button type="submit" class="btn-submit brand-submit">Send Strategy Request</button>
                         </form>
                     </div>
                 </div>
@@ -755,91 +742,92 @@
         </div>
 
 
-        <!-- 3. DEDICATED HIGH-AESTHETIC CREATOR ENGINE PORTAL -->
+        <!-- 3. CREATOR PORTAL -->
         <div id="view-creator" class="view-section creator">
             <section class="hero-block creator">
-                <h1>Protect Your Craft. Maximize Absolute Contract Enterprise Value.</h1>
-                <p>Stop wasting endless engineering hours acting as a manager. Offload corporate friction completely. Focus exclusively on your video infrastructure while we build your inbound sponsorship stack.</p>
+                <h1>Focus On Content. We Will Bring The Brand Deals.</h1>
+                <p>Stop wasting endless hours negotiating prices with cold corporate emails. Let us protect your creative freedom while locking in stable, high-paying sponsorship revenue.</p>
                 <div class="action-flex">
-                    <button class="action-btn btn-green" onclick="scrollToForm('creator-intake-form')">Apply for Roster Integration</button>
+                    <button class="action-btn btn-green" onclick="scrollToForm('creator-intake-form')">Apply to the Roster</button>
                 </div>
             </section>
 
+            <!-- IMAGE_PLACEHOLDER -->
             <div class="visual-container">
-                <div class="visual-placeholder-text">[ Creator Growth Analytics & Integration Dashboard Panel ]</div>
+                <div class="visual-placeholder-text">[ Image: High-end graphic showing creator network benefits and sponsor timelines ]</div>
             </div>
 
-            <!-- Deep Knowledge Lifecycle Section for Creators -->
+            <!-- Step by Step Knowledge for Creators -->
             <section class="knowledge-block">
                 <div class="block-heading">
-                    <h2>Our Operational Promise to Creators</h2>
-                    <p>We optimize your operations so you can build. No corporate lowball offers, no complex script delays, no missed payments.</p>
+                    <h2>How We Support Our Creators</h2>
+                    <p>We work in the background to handle business operations so you can spend your time building videos.</p>
                 </div>
 
                 <div class="lifecycle-grid">
                     <div class="lifecycle-card">
                         <div class="card-step">Stage 01</div>
-                        <h4>Enterprise Deal Flow</h4>
-                        <p>We pitch your exact channel demographics to global software and tech brands matching your unique channel aesthetic.</p>
+                        <h4>Direct Inbound Deals</h4>
+                        <p>We match your channel with premium software and hardware brands looking for your specific audience.</p>
                     </div>
                     <div class="lifecycle-card">
                         <div class="card-step">Stage 02</div>
-                        <h4>Contract Shield</h4>
-                        <p>Absolute enforcement of creative freedom guidelines and verified timely payment processing for every integration.</p>
+                        <h4>Contract Protection</h4>
+                        <p>We secure fair pricing structures and guard against late brand payments or shifting guidelines.</p>
                     </div>
                     <div class="lifecycle-card">
                         <div class="card-step">Stage 03</div>
-                        <h4>Psychological Audit</h4>
-                        <p>Our core in-house thumbnail strategists help engineer hooks and retention profiles to scale your view baselines.</p>
+                        <h4>Retention Support</h4>
+                        <p>Our internal team provides performance ideas to help optimize audience hooks and maximize content retention.</p>
                     </div>
                     <div class="lifecycle-card">
                         <div class="card-step">Stage 04</div>
-                        <h4>Performance Scale</h4>
-                        <p>Transitioning singular multi-video testing runs into high-value, predictable, recurring programmatic quarterly retaining contracts.</p>
+                        <h4>Programmatic Scaling</h4>
+                        <p>We convert simple test videos into long-term quarterly recurring sponsorship contracts.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Direct Creator Onboarding Module -->
+            <!-- Creator Application Box -->
             <section id="creator-intake-form" class="intake-section">
                 <div class="intake-box" style="border-color: rgba(16, 185, 129, 0.3);">
                     <div class="intake-details">
-                        <h3>Secure Your Monetization Layer</h3>
-                        <p>Apply to onboard onto our high-tier dedicated roster network. We work strictly on commission—we only win when your channel secures elite deals.</p>
+                        <h3>Join Our Active Roster</h3>
+                        <p>Apply to onboard onto our talent network. We operate strictly on a commission structure—we only grow when your channel secures solid brand deals.</p>
                         <ul class="trust-checklist">
-                            <li>100% Contract & Pricing Transparency</li>
-                            <li>Direct Inbound Management of All Tech Leases</li>
-                            <li>Advanced Visual Hook Optimizations</li>
+                            <li>100% Contract & Payment Transparency</li>
+                            <li>Direct Management of All Corporate Requests</li>
+                            <li>Creative Freedom Protection Safeguards</li>
                         </ul>
                     </div>
                     <div>
                         <form action="https://formspree.io/f/xlgkywng" method="POST">
-                            <input type="hidden" name="_subject" value="APPLICATION: New Creator Roster Submission">
+                            <input type="hidden" name="_subject" value="New Creator Application - NexVance">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>Channel Identity</label>
-                                    <input type="text" name="channel_name" required placeholder="e.g. CodeVibe">
+                                    <label>Channel Name</label>
+                                    <input type="text" name="channel_name" required placeholder="e.g. CodeVlog">
                                 </div>
                                 <div class="form-group">
-                                    <label>Secure Communication Email</label>
-                                    <input type="email" name="email" required placeholder="creator@gmail.com">
+                                    <label>Contact Email</label>
+                                    <input type="email" name="email" required placeholder="yourname@gmail.com">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Primary YouTube Platform URL</label>
+                                <label>YouTube Channel URL</label>
                                 <input type="url" name="channel_url" required placeholder="youtube.com/@yourchannel">
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label>Average Baseline Views</label>
-                                    <input type="text" name="metrics_views" required placeholder="e.g. 40,000">
+                                    <label>Average Views Per Video</label>
+                                    <input type="text" name="metrics_views" required placeholder="e.g. 30,000">
                                 </div>
                                 <div class="form-group">
-                                    <label>Core Tech Core Focus</label>
-                                    <input type="text" name="niche_focus" required placeholder="e.g. AI / Minimal Desks / Software">
+                                    <label>Main Niche / Topic Focus</label>
+                                    <input type="text" name="niche_focus" required placeholder="e.g. AI / Productivity / Software Review">
                                 </div>
                             </div>
-                            <button type="submit" class="btn-submit creator-submit">Submit Onboarding File</button>
+                            <button type="submit" class="btn-submit creator-submit">Submit Application</button>
                         </form>
                     </div>
                 </div>
@@ -848,58 +836,53 @@
 
     </main>
 
-    <!-- Global Enterprise Footer -->
+    <!-- Global Footer -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-info">
                 <h3>NexVance</h3>
-                <p>We engine the baseline metrics, behavioral optimization tools, and strategic pipelines that secure modern user scale for global tech institutions.</p>
+                <p>We build the modern operational pipelines and strategic frameworks that drive growth and secure high-value partnerships for the tech industry.</p>
             </div>
             <div class="footer-links">
-                <h4>Ecosystem</h4>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a onclick="showSection('brand')">Tech Brand Portal</a></li>
                     <li><a onclick="showSection('creator')">Creator Roster Portal</a></li>
-                    <li><a onclick="showSection('home')">Neuromarketing Foundations</a></li>
+                    <li><a onclick="showSection('home')">Overview Hub</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Corporate Network</h4>
+                <h4>Corporate</h4>
                 <ul>
                     <li><a onclick="showSection('home')">Privacy Framework</a></li>
-                    <li><a onclick="showSection('home')">Operations Protocol</a></li>
+                    <li><a onclick="showSection('home')">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 NexVance. Built for Global Scale Infrastructure. All rights reserved.</p>
+            <p>&copy; 2026 NexVance. Managed Operations Infrastructure. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- View & Routing Interaction Controller Script -->
+    <!-- Interactive Section Script -->
     <script>
         function showSection(sectionId) {
-            // Remove active classes from all dynamic viewport elements
             document.querySelectorAll('.view-section').forEach(el => {
                 el.classList.remove('active');
             });
             
-            // Remove navigation style indicator accents
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.className = 'nav-btn';
             });
 
-            // Target layout activation
             const selectedSection = document.getElementById('view-' + sectionId);
             selectedSection.classList.add('active');
 
-            // Apply unique active highlighting profiles
             const activeNavBtn = document.getElementById('btn-nav-' + sectionId);
             if(sectionId === 'home') activeNavBtn.classList.add('active');
             if(sectionId === 'brand') activeNavBtn.classList.add('active-brand');
             if(sectionId === 'creator') activeNavBtn.classList.add('active-creator');
 
-            // Scroll directly to the top anchor points
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
