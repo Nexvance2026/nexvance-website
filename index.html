@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexVance | Premium Tech Influencer Marketing Agency</title>
+    <title>NexVance | Premium Influencer Marketing Agency</title>
     <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131a26;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --accent-brand: #3b82f6;
+            --accent-creator: #10b981;
+            --border-glow: rgba(59, 130, 246, 0.2);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
+
         body {
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             overflow-x: hidden;
+            line-height: 1.6;
         }
+
+        /* Header & Logo Placeholder */
         header {
             max-width: 1200px;
             margin: 0 auto;
@@ -25,167 +39,441 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #3b82f6;
-            letter-spacing: 1px;
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .hero {
-            max-width: 1000px;
-            margin: 60px auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .hero h1 {
-            font-size: 48px;
+
+        /* Premium Textual Logo Setup until image logo is uploaded */
+        .logo-text {
+            font-size: 28px;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #ffffff, #9ca3af);
+            letter-spacing: -0.5px;
+            background: linear-gradient(to right, #ffffff, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero p {
-            font-size: 18px;
-            color: #9ca3af;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+
+        /* Main Container for Deep Scrolling */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 100px 20px;
         }
-        .cta-buttons {
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #ffffff, #a5b4fc, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Interaction Buttons */
+        .cta-group {
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
         }
+
         .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 8px;
+            padding: 16px 35px;
+            font-size: 16px;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            border-radius: 8px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
         }
-        .btn-primary {
-            background-color: #3b82f6;
-            color: #ffffff;
+
+        .btn-brand {
+            background-color: var(--accent-brand);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
         }
-        .btn-primary:hover {
-            background-color: #2563eb;
+
+        .btn-brand:hover {
             transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
         }
-        .btn-secondary {
-            border: 2px solid #4b5563;
+
+        .btn-creator {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--accent-creator);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .btn-creator:hover {
+            background-color: var(--accent-creator);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Trust & Process Section (Knowledge Base) */
+        .process-section {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .process-card {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .process-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: rgba(59, 130, 246, 0.15);
+            position: absolute;
+            top: 15px;
+            right: 25px;
+        }
+
+        .process-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
             color: #f3f4f6;
         }
-        .btn-secondary:hover {
-            border-color: #9ca3af;
-            background-color: rgba(255,255,255,0.05);
-            transform: translateY(-2px);
+
+        .process-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
         }
-        .sections-container {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-        .grid {
-            display: flex;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .card {
-            flex: 1;
-            background: rgba(17, 24, 39, 0.7);
-            border: 1px solid #1f2937;
+
+        /* Dedicated Portal Sections (Hidden by Default) */
+        .portal-section {
+            display: none;
+            padding: 60px 40px;
             border-radius: 16px;
-            padding: 40px;
-            transition: border-color 0.3s ease;
+            margin-top: 40px;
+            animation: fadeIn 0.5s ease forwards;
         }
-        .card:hover {
-            border-color: #3b82f6;
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .card h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #ffffff;
+
+        #brand-portal {
+            background: linear-gradient(135deg, #131a26 0%, #0d1527 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.1);
         }
-        .card h2 span {
-            color: #3b82f6;
+
+        #creator-portal {
+            background: linear-gradient(135deg, #111d20 0%, #091416 100%);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);
         }
-        .card ul {
+
+        .portal-header {
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .portal-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .portal-header p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        @media (max-width: 850px) {
+            .portal-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+
+        .benefits-list {
             list-style: none;
-            margin-bottom: 30px;
         }
-        .card ul li {
-            margin-bottom: 12px;
-            color: #9ca3af;
+
+        .benefits-list li {
+            margin-bottom: 20px;
             position: relative;
-            padding-left: 24px;
+            padding-left: 30px;
+            font-size: 16px;
         }
-        .card ul li::before {
+
+        .benefits-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #3b82f6;
+            top: 0;
             font-weight: bold;
         }
+
+        #brand-portal .benefits-list li::before { color: var(--accent-brand); }
+        #creator-portal .benefits-list li::before { color: var(--accent-creator); }
+
+        /* Advanced Premium Forms */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #d1d5db;
+        }
+
+        input, textarea, select {
+            padding: 14px;
+            background: #1f2937;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            color: white;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-brand);
+            background: #253142;
+        }
+
+        #creator-portal input:focus, #creator-portal textarea:focus, #creator-portal select:focus {
+            border-color: var(--accent-creator);
+            background: #192b24;
+        }
+
+        submit-btn {
+            padding: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        #brand-portal .submit-btn { background: var(--accent-brand); }
+        #creator-portal .submit-btn { background: var(--accent-creator); color: #000; }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 60px 20px;
-            border-top: 1px solid #1f2937;
-            color: #4b5563;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
             font-size: 14px;
-        }
-        @media (max-width: 768px) {
-            .grid { flex-direction: column; }
-            .hero h1 { font-size: 32px; }
-            .cta-buttons { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">NexVance</div>
+        <div class="logo-container">
+            <!-- text logo infrastructure -->
+            <div class="logo-text">NexVance</div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Bridging the Gap Between<br>Tech Brands & Premium Creators</h1>
-        <p>We manage high-converting YouTube integrations, handling the entire campaign pipeline from legal contracts to content delivery.</p>
-        <div class="cta-buttons">
-            <a href="mailto:haseeb@nexvance.com" class="btn btn-primary">I am a Tech Brand</a>
-            <a href="mailto:haseeb@nexvance.com" class="btn btn-secondary">I am a Creator</a>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>We Bridge the Gap Between Dynamic Tech Brands & High-Aesthetic Creators</h1>
+            <p>We streamline elite YouTube integrations. No communication gaps, no messy tracking—just high-converting workflows that translate directly into ROI and scaled audiences.</p>
+            
+            <div class="cta-group">
+                <button class="btn btn-brand" onclick="openPortal('brand')">I am a Tech Brand</button>
+                <button class="btn btn-creator" onclick="openPortal('creator')">I am a Creator</button>
+            </div>
+        </section>
 
-    <div class="sections-container">
-        <div class="grid">
-            <div class="card">
-                <h2>For <span>Tech Brands</span></h2>
-                <p style="color:#9ca3af; margin-bottom: 20px;">Scale your customer acquisition with high-aesthetic, structural workflows that drive actual product downloads and sales.</p>
-                <ul>
-                    <li>Curated roster of US/UK tech lifestyle creators</li>
-                    <li>Strict compliance and absolute script alignment</li>
-                    <li>Guaranteed delivery timeline for Q3 campaigns</li>
-                    <li>Zero communication delays — single point of contact</li>
-                </ul>
+        <!-- Knowledge & Framework Section (Trust Builder) -->
+        <section class="process-section">
+            <h2 class="section-title">How NexVance Drives Guaranteed Success</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">01</div>
+                    <h3>Precision Vetting</h3>
+                    <p>We don't match brands blindly. We analyze behavioral metrics, creator audience psychology, and past performance analytics to ensure an organic audience alignment.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">02</div>
+                    <h3>Frictionless Contracts</h3>
+                    <p>We handle the heavy lifting. From comprehensive legal frameworks and strict compliance management to timely script alignment, we eliminate execution risks completely.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-number">03</div>
+                    <h3>Data-Driven Optimization</h3>
+                    <p>Every single integration is structured around advanced neuromarketing principles. We maximize hook retention and engineer CTR to convert viewers into paying customers.</p>
+                </div>
             </div>
-            <div class="card">
-                <h2>For <span>Creators</span></h2>
-                <p style="color:#9ca3af; margin-bottom: 20px;">Stop wasting time negotiating with brands. Focus entirely on content while we maximize your revenue.</p>
-                <ul>
-                    <li>100% Inbound business & sponsor negotiations handled</li>
-                    <li>Strict legal contract management for your safety</li>
-                    <li>Zero upfront costs — 20% cut only when you get paid</li>
-                    <li>Direct redirection for any future brand campaigns</li>
-                </ul>
+        </section>
+
+        <!-- Dedicated Tech Brand Portal -->
+        <section id="brand-portal" class="portal-section">
+            <div class="portal-header">
+                <h2>Scale Your Product Adoption</h2>
+                <p>Acquire high-intent customers through structured workflows, secure timelines, and high-conversion integrations built specifically for software, hardware, and SaaS companies.</p>
             </div>
-        </div>
-    </div>
+            <div class="portal-grid">
+                <div>
+                    <ul class="benefits-list">
+                        <li><strong>Curated Network:</strong> Instant access to top-tier verified tech lifestyle and software creators.</li>
+                        <li><strong>Zero Compliance Overhead:</strong> Strict script alignment and thorough quality checks before any video goes live.</li>
+                        <li><strong>Guaranteed Delivery Timelines:</strong> Complete production management ensuring no communication delays.</li>
+                        <li><strong>Single Point of Contact:</strong> Dedicated manager handling your whole campaign pipeline seamlessly.</li>
+                    </ul>
+                </div>
+                <div>
+                    <!-- Secure Action Form routed to your central dashboard email -->
+                    <form action="https://formspree.io/f/https://formspree.io/f/xlgkywng" method="POST">
+                        <input type="hidden" name="_subject" value="New Tech Brand Inquiry - NexVance">
+                        <input type="hidden" name="to" value="agencynexvance@gmail.com">
+                        
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" name="company_name" required placeholder="e.g. Acme Software">
+                        </div>
+                        <div class="form-group">
+                            <label>Work Email</label>
+                            <input type="email" name="email" required placeholder="name@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Target Audience / Goal</label>
+                            <textarea name="goals" rows="3" required placeholder="What are you trying to drive? Downloads, signups, brand awareness..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Request Campaign Strategy</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Creator Portal -->
+        <section id="creator-portal" class="portal-section">
+            <div class="portal-header">
+                <h2>Protect Your Craft. Maximize Revenue.</h2>
+                <p>Stop wasting endless hours negotiating complex terms with corporate brands. Focus entirely on your content while we land and manage your inbound corporate pipeline.</p>
+            </div>
+            <div class="portal-grid">
+                <div>
+                    <ul class="benefits-list">
+                        <li><strong>Premium Sponsorship Deals:</strong> We connect you directly with global tech brands looking for authentic integrations.</li>
+                        <li><strong>Strict Contract Safety:</strong> Full protection against delayed payments or shifting campaign requirements.</li>
+                        <li><strong>Neuromarketing Support:</strong> Custom analytics audit to help optimize retention hooks and visual strategies.</li>
+                        <li><strong>100% Free Until You Get Paid:</strong> Transparent 20% commission model strictly on closed brand contracts.</li>
+                    </ul>
+                </div>
+                <div>
+                    <form action="https://formspree.io/f/https://formspree.io/f/xlgkywng" method="POST">
+                        <input type="hidden" name="_subject" value="New Creator Application - NexVance">
+                        <input type="hidden" name="to" value="agencynexvance@gmail.com">
+                        
+                        <div class="form-group">
+                            <label>Channel Name</label>
+                            <input type="text" name="channel_name" required placeholder="e.g. TechVlog">
+                        </div>
+                        <div class="form-group">
+                            <label>YouTube Link</label>
+                            <input type="url" name="channel_url" required placeholder="youtube.com/@yourchannel">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Email</label>
+                            <input type="email" name="email" required placeholder="yourname@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Average Views Per Video</label>
+                            <input type="text" name="avg_views" required placeholder="e.g. 20k - 50k">
+                        </div>
+                        <button type="submit" class="submit-btn">Apply for Roster Onboarding</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 NexVance. All rights reserved.</p>
     </footer>
 
+    <script>
+        function openPortal(type) {
+            // Hide all portals first
+            document.getElementById('brand-portal').style.display = 'none';
+            document.getElementById('creator-portal').style.display = 'none';
+            
+            // Show the targeted premium portal section
+            const activePortal = document.getElementById(type + '-portal');
+            activePortal.style.display = 'block';
+            
+            // Smooth scroll execution to display full layout details
+            activePortal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
 </body>
 </html>
